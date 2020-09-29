@@ -1,11 +1,15 @@
 // globalStyles.js
 import { createGlobalStyle } from 'styled-components';
- 
+
 const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
     body {
       margin: 0;
+
+      font-family: Lato, sans-serif;
+      color: white;
+      font-weight: 400;
+
       font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
@@ -27,14 +31,35 @@ const GlobalStyle = createGlobalStyle`
       --bg-content: transparent;
     }
 
-    .aplication {
+    .aplication{
       display: flex;
       flex-direction: column;
       height: 100vh;
-      width: 970px;
-      margin: auto
+    }
+
+    .header-page {
+      min-height: 250px;
+      text-align: center;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      }
+    .header-page h2 {    font-size: 48px;  font-weight: 600;}
+    .header-page h3 {font-size: 24px;  font-weight: 300;  letter-spacing: 0.06rem;}
+
+    main{
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      }
+
+
+  @media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {  max-width: 1280px; margin: 0 auto; }
   }
 
  `;
- 
+
 export default GlobalStyle;
