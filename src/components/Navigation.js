@@ -21,7 +21,7 @@ function Navigation() {
                   <NavLink to="/programacao">Programação</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/assista-ao-video">Assista ao video</NavLink>
+                  <NavLink to="/assista-ao-video">Assista ao vivo</NavLink>
                 </li>
                 <li>
                   <NavLink to="/versoes-2021">versoes-2021</NavLink>

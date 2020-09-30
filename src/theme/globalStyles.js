@@ -7,7 +7,6 @@ const GlobalStyle = createGlobalStyle`
       margin: 0;
 
       font-family: Lato, sans-serif;
-      color: white;
       font-weight: 400;
 
       font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -45,6 +44,7 @@ const GlobalStyle = createGlobalStyle`
       justify-content: center;
       display: flex;
       flex-direction: column;
+      color: #fff;
       }
     .header-page h2 {    font-size: 48px;  font-weight: 600;}
     .header-page h3 {font-size: 24px;  font-weight: 300;  letter-spacing: 0.06rem;}

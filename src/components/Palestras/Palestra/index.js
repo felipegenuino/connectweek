@@ -53,14 +53,7 @@ function Palestra({ title, subtitle, diaMes, hora, palestrantes, content, agora,
               </div>
             )}
             <hr />
-            <div className="GradeItemCardContentInfoSpeaker">
-              {/* <strong className="GradeItemCardContentInfoSpeakerName">
-                Felipe
-          </strong> */}
-              <span className="GradeItemCardContentInfoSpeakerPosition">
-                {subtitle}
-              </span>
-            </div>
+
           </div>
           <div className="GradeItemCardContentCall">
             <button href="#" onClick={toggle} className="GradeItemCardContentCallToAction">
@@ -101,6 +94,7 @@ const GradeItemContainer = styled.li`
   margin-bottom: 20px;
   border: 2px solid transparent;
   transition: all 0.2s linear;
+  color: #fff;
 
   &:hover,
   &:focus-within {
@@ -204,6 +198,7 @@ const GradeItemContainer = styled.li`
       align-items: center;
       height: 100%;
       .GradeItemCardContentCallToAction {
+        background: transparent;
         border: 1px solid #fff;
         color: #fff;
         text-transform: uppercase;
