@@ -38,7 +38,9 @@ function Palestras() {
     <GradeContent>
 
       {loading &&
-        <Spinner size="lg" color="light" />
+        <div className="loadingContainer">
+          <Spinner size="lg" color="light" />
+        </div>
       }
       {!loading &&
         <GradeList aria-label="programação">
@@ -69,6 +71,14 @@ export default Palestras;
 const GradeContent = styled.section`
   overflow-y: auto;
   height: calc(100vh - 410px);
+
+  .loadingContainer{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    min-height: 50vh;
+    align-items: center;
+  }
 `;
 
 const GradeList = styled.ul`

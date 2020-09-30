@@ -7,7 +7,7 @@ function Palestra({ title, subtitle, diaMes, hora, palestrantes, content, agora,
 
 
 
-  const classNameModal = 'Teste';
+  const classNameModal = 'modalGrade';
 
   console.log('palestrantes', palestrantes)
 
@@ -64,18 +64,48 @@ function Palestra({ title, subtitle, diaMes, hora, palestrantes, content, agora,
 
 
       <Modal isOpen={modal} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }}
-        toggle={toggle} className={classNameModal}>
+        toggle={toggle} className={classNameModal} size="lg">
 
-        <ModalHeader toggle={toggle}>{title}</ModalHeader>
+        <div class="modal-header-top">
+          <span class="modal-header-top__data">{diaMes}</span>
+          <span class="modal-header-top__hora">{hora}</span>
+        </div>
+        <ModalHeader toggle={toggle}>
+          <strong>{step}: </strong> {title}
+        </ModalHeader>
         <ModalBody>
+          <h5>O que você vai ver?</h5>
+          <div className="modal-data-content" dangerouslySetInnerHTML={{ __html: content.replace(/(<? *script)/gi, 'illegalscript') }}></div>
 
-          <div dangerouslySetInnerHTML={{ __html: content.replace(/(<? *script)/gi, 'illegalscript') }} >
+          <hr className="modal-separador" />
+          <div className="modal-lista-palestrantes" >
+            <ul aria-label="palestrantes">
+
+              {palestrantes && palestrantes.map(x =>
+                <li>
+                  <div className="palestrante-mini-card">
+                    <div className="palestrante-mini-card-d">
+                      <img src={x.acf_cw2021__schedule_palestrante__image.url} alt={x.acf_cw2021__schedule_palestrante__image.alt} />
+                    </div>
+                    <div className="palestrante-mini-card-e">
+                      <h5>  {x.acf_cw2021__schedule_palestrante__name} </h5>
+                      <p> {x.acf_cw2021__schedule_palestrante__description}  </p>
+                    </div>
+                  </div>
+
+                </li>
+
+              )}
+
+
+            </ul>
           </div>
+
         </ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
+        {/* <ModalFooter>
+          <Button color="primary" onClick={toggle}>Do Something</Button>
           <Button color="secondary" onClick={toggle}>Cancel</Button>
-        </ModalFooter>
+        </ModalFooter> */}
       </Modal >
 
 
@@ -100,6 +130,7 @@ const GradeItemContainer = styled.li`
   &:focus-within {
     border: 2px solid #2dad71;
   }
+
 
   .GradeItemDate {
     background-color: #2dad71;
