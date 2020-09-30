@@ -144,6 +144,35 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+
+
+
+
+  .list-days{ justify-content: center; align-items: center;  display: flex;}
+  .list-days ul{    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    color: #fff;}
+  .list-days ul li{line-height: auto}
+  .list-days ul li.active{line-height: auto}
+  .list-days ul li.active > div { background: #2DAD71; border-color: #2DAD71 }
+  .list-days ul li > div{
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    height: 90px;
+    border: 1px solid;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+  }
+  .list-days ul li:not(.active) > div:hover{ background-color: rgba(255,255,255,0.2)}
+  .list-days ul li > div span{ font-size: 24px;}
+  .list-days ul li > div small{ font-size: 16px;}
+
  `;
 
 export default GlobalStyle;
